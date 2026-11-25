@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <style>
+    /* 学号尾号 8：晨光杏色。page 其余属性严格按作业原文保留。 */
+    .page {
+      display: inline-block;
+      background-color: #FFECD6;
+      box-shadow: 0 0 30px rgba(80, 58, 35, 0.25);
+      text-align: left;
+      max-width: 720px;
+    }
+
+    body {
+      margin: 0;
+      padding: 40px 16px;
+      background-color: #FFECD6;
+      color: #493a32;
+      text-align: center;
+      font-family: "Microsoft YaHei", sans-serif;
+      font-size: 16px;
+      line-height: 1.9;
+    }
+
+    .top, .introduction, .registration, .links, .notice {
+      padding: 26px 32px;
+    }
+    .top {
+      background-color: #523b32;
+      border-bottom: 5px solid #c58a53;
+    }
+    .top p { color: #f6d8b8; margin: 6px 0; letter-spacing: 2px; }
+
+    /* 并集选择器：统一六级标题的字体、行高和颜色。 */
+    h1, h2, h3, h4, h5, h6 {
+      font-family: "Microsoft YaHei", sans-serif;
+      line-height: 1.5;
+      color: #684631;
+    }
+    h1 { font-size: 30px; color: #fff5e9; margin: 0 0 10px; }
+    h2 { font-size: 24px; margin: 0 0 16px; }
+    h3 { font-size: 22px; margin: 0 0 16px; }
+    p { margin: 12px 0; }
+    .introduction, .links { background-color: #fff8ee; }
+    .registration { border-top: 1px solid #e6c7a8; }
+
+    /* ID 选择器：只强调 p，不影响同名 ID 的 h2（按作业要求设置）。 */
+    p#intro {
+      padding: 13px 16px;
+      background-color: #f7dfc3;
+      border-left: 4px solid #a85a37;
+      color: #943f27;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    table { width: 100%; border-collapse: collapse; font-size: 15px; }
+    th, td { padding: 12px 10px; border: 1px solid #d8b798; text-align: left; }
+    th { background-color: #ead0b3; color: #513729; }
+    td { background-color: #fffaf3; }
+
+    /* 链接四种状态：按 link、visited、hover、active 的顺序声明。 */
+    a:link { color: #365e84; }
+    a:visited { color: #775282; }
+    a:hover { color: #a44d28; text-decoration: underline; }
+    a:active { color: #c12d29; }
+
+    /* 后代选择器：表格中的作品链接会触发此样式。 */
+    div table a {
+      font-weight: bold;
+      text-decoration-style: dotted;
+      text-underline-offset: 4px;
+    }
+
+    /* 带类名的链接：链接区的两条链接分别调用 red、blue。 */
+    a.red, a.blue {
+      display: inline-block;
+      padding: 9px 14px;
+      margin: 6px 8px 6px 0;
+      border: 1px solid;
+      border-radius: 6px;
+      text-decoration: none;
+    }
+    a.red { color: #9c4231; border-color: #cf9481; background-color: #ffede4; }
+    a.blue { color: #345e83; border-color: #8ea9bc; background-color: #eaf2f5; }
+    a.red:hover, a.blue:hover { background-color: #fff; text-decoration: underline; }
+    a.red:active, a.blue:active { color: #c12d29; }
+    a:focus-visible { outline: 3px solid #926943; outline-offset: 3px; }
+
+    /* 伪元素：段落首字放大；div 首行设置字距。 */
+    p::first-letter { font-size: 1.15em; font-weight: bold; }
+    div::first-line { letter-spacing: 0.3px; }
+
+    .notice { background-color: #f2d9bd; border-top: 1px solid #d8b798; }
+    .notice p { margin: 14px 0; }
+    @media (max-width: 560px) {
+      body { padding: 16px 8px; }
+      .top, .introduction, .registration, .links, .notice { padding: 22px 16px; }
+      h1 { font-size: 25px; }
+      th, td { padding: 9px 5px; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- ① 顶部标题区 -->
+    <div class="top">
+      <p>在镜头与文字之间，遇见另一种人生</p>
+      <h1>影像与文学讨论夜 · Film &amp; Literature Talk</h1>
+      <p>一部电影，一本书，一场关于故事的相遇。</p>
+    </div>
+
+    <!-- ② 活动介绍区：两个介绍段落与一个重要提示 -->
+    <div class="introduction">
+      <h2 id="intro">当故事从书页走向银幕</h2>
+      <p>电影《千与千寻》描绘了少女在陌生世界中的成长与选择；小说《小王子》（The Little Prince）则以简单的语言讨论爱、责任与陪伴。本次讨论夜邀请你带上喜欢的作品，一起聊聊让我们久久难忘的人物与片段。</p>
+      <p>我们将从人物塑造、画面表达和叙事节奏三个角度分享感受，比较影像与文字讲述故事的不同方式。无需专业知识，也不必准备标准答案，只要愿意倾听，就能成为讨论的一部分。</p>
+      <p id="intro">重要提示：请提前选好一部电影或一本小说，并准备约三分钟的分享。下方报名名单为页面展示示例。</p>
+    </div>
+
+    <!-- ③ 报名信息表格：表头 1 行、报名数据 6 行，共 7 行 -->
+    <div class="registration">
+      <h3>活动报名信息</h3>
+      <table>
+        <tr><th>姓名</th><th>分享作品</th><th>讨论主题</th></tr>
+        <tr><td>王晓雨</td><td><a href="#intro">千与千寻</a></td><td>成长中的勇气与自我</td></tr>
+        <tr><td>林悦</td><td>小王子</td><td>爱与责任的意义</td></tr>
+        <tr><td>陈晨</td><td>活着</td><td>文字与影像中的生命韧性</td></tr>
+        <tr><td>周宁</td><td>怦然心动</td><td>双重视角下的理解</td></tr>
+        <tr><td>许安</td><td>哈利·波特与魔法石</td><td>奇幻世界的银幕呈现</td></tr>
+        <tr><td>李晴</td><td>城南旧事</td><td>童年记忆与离别</td></tr>
+      </table>
+    </div>
+
+    <!-- ④ 页面链接区：目标地址严格依照作业说明 -->
+    <div class="links">
+      <h3>继续了解活动</h3>
+      <div>
+        <a class="red" href="https://hongchenwusdnu.github.io/bookstore/job4.html">查看往期活动照片</a>
+        <a class="blue" href="job3.html">在线咨询活动详情</a>
+      </div>
+    </div>
+
+    <!-- ⑤ 底部公告区：三段公告，每段包含 br 换行 -->
+    <div class="notice">
+      <h3>活动公告</h3>
+      <p>活动时间：周五 19:00—20:30。<br>活动地点：校园阅读空间，具体教室以班级通知为准。</p>
+      <p>分享约定：尊重每一种阅读与观影感受。<br>涉及关键情节前请先提醒，给尚未看过作品的同学留一份期待。</p>
+      <p>参与准备：携带纸笔，记录你喜欢的句子和问题。<br>欢迎独自赴约，也欢迎邀请朋友，在交流中发现新的作品。</p>
+    </div>
+  </div>
+</body>
+</html>
